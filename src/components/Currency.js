@@ -18,9 +18,11 @@ function Currency( { currencyArr, navigation, currentCurrency} ) {
                 {
                     currentCurrency === currency ? 
                     <Text
-                        style={{ color: '#45d4d5' }}
+                        style={{ color: '#45d4d5', fontSize: 11 }}
                     >{currency}</Text> :
-                    <Text>{currency}</Text>
+                    <Text
+                        style={{ color: '#bdbdbd', fontSize: 11}}
+                    >{currency}</Text>
                 }
             </TouchableOpacity>
         )
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         margin: 15,
-        marginVertical: 18
+        marginVertical: 20
     },
     currency: {
         width: 40,

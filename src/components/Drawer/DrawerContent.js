@@ -10,38 +10,41 @@ export function DrawerContent({ navigation }){
     return(
         <List.Section style={styles.listContainer}>
             <List.Accordion
-                title='Engagement Ring'
+                title={<Text style={{ fontSize: 14 }}>Engagement Ring</Text>}
                 style={[ styles.accordion, styles.border, { borderTopWidth: 1} ]}
+                titleStyle={{
+                    color: 'black'
+                }}
             >
                 <View>
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ForHer')}
                     >
-                        <List.Item title="For Her" />
+                        <List.Item title={<Text style={{ fontSize: 14 }}>For Her</Text>} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ForHim')}
                     >
-                        <List.Item title="For Him" />
+                        <List.Item title={<Text style={{ fontSize: 14 }}>For Him</Text>} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Rings')}
                     >
-                        <List.Item title="Rings" />
+                        <List.Item title={<Text style={{ fontSize: 14 }}>Rings</Text>} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Bands')}
                     >
-                        <List.Item title="Bands" />
+                        <List.Item title={<Text style={{ fontSize: 14 }}>Bands</Text>} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ViewAll')}
                     >
-                        <List.Item title="View All" />
+                        <List.Item title={<Text style={{ fontSize: 14 }}>View All</Text>} />
                     </TouchableOpacity>
                     <View 
                         style={[styles.accordionBorder, { marginTop: 0 }]}
@@ -53,33 +56,36 @@ export function DrawerContent({ navigation }){
                 onPress={() => navigation.navigate('DesignYourOwn')}
                 style={[ styles.border]}
             >
-                <List.Item title="Design your Own Engagement Ring" />
+                <List.Item title={<Text style={{ fontSize: 14 }}>Design your Own Engagement Ring</Text>} />
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('ReferYourFriends')}
                 style={[ styles.border ]}
             >
-                <List.Item title="Refer Your Friends" />
+                <List.Item title={<Text style={{ fontSize: 14 }}>Refer Your Friends</Text>} />
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('BookAppointement')}
                 style={[ styles.border ]}
             >
-                <List.Item title="Book An Appointment" />
+                <List.Item title={<Text style={{ fontSize: 14 }}>Book An Appointment</Text>} />
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('TryAtHome')}
                 style={[ styles.border ]}
             >
-                <List.Item title="Try At Home For Free" />
+                <List.Item title={<Text style={{ fontSize: 14 }}>Try At Home For Free</Text>}/>
             </TouchableOpacity>
 
             <List.Accordion
-                title={currentCurrency}
+                title={<Text style={{ fontSize: 14 }}>{currentCurrency}</Text>}
                 style={[ styles.accordion, styles.border ]}
+                titleStyle={{
+                    color: 'black'
+                }}
             >
                 <Currency currencyArr={[ "AUD", 'BDT', "GBP", "CAD", "EUR" ]}
                     navigation={navigation}
@@ -114,7 +120,7 @@ export function DrawerContent({ navigation }){
                 onPress={() => navigation.navigate('ContactUs')}
                 style={[ styles.border ]}
             >
-                <List.Item title="Contact Us" />
+                <List.Item title={<Text style={{ fontSize: 14 }}>Contact Us</Text>} />
             </TouchableOpacity>
 
             <View
@@ -146,7 +152,7 @@ export function DrawerContent({ navigation }){
 
 const styles = StyleSheet.create({
     listContainer: {
-        marginTop: 37, 
+        marginTop: 39, 
         flex: 1,
     },
     border: {
@@ -155,6 +161,8 @@ const styles = StyleSheet.create({
     },
     accordion: {
         backgroundColor:'white',
+        height: 48,
+        justifyContent: 'center'
     },
     buttonContainer: {
         position: 'absolute', 
