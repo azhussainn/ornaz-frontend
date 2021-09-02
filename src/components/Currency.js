@@ -18,10 +18,10 @@ function Currency( { currencyArr, navigation, currentCurrency} ) {
                 {
                     currentCurrency === currency ? 
                     <Text
-                        style={{ color: '#45d4d5', fontSize: 11 }}
+                        style={[ styles.text, styles.highlightText ]}
                     >{currency}</Text> :
                     <Text
-                        style={{ color: '#bdbdbd', fontSize: 11}}
+                    style={[ styles.text, styles.normalText ]}
                     >{currency}</Text>
                 }
             </TouchableOpacity>
@@ -49,6 +49,15 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40
     },
+    text: {
+        fontSize: 11
+    },
+    normalText:{
+        color: '#bdbdbd'
+    },
+    highlightText:{
+        color: '#45d4d5',
+    }
 })
 
 export default Currency
