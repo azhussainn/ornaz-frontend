@@ -7,6 +7,8 @@ import CouplesCarousel from '../components/Carousel/CouplesCarousel';
 import CelebCarousel from '../components/Carousel/CelebCarousel';
 import VirtualConsultant from '../components/Homepage/VirtualConsultant';
 import Ideal from '../components/Homepage/Ideal';
+import NewsLetter from '../components/Homepage/NewsLetter';
+import Footer from '../components/Footer';
 import { 
     himHerData, 
     diamondData, 
@@ -14,7 +16,8 @@ import {
     celebData, 
     vcData, 
     ourProcessData, 
-    ourGuaranteeData 
+    ourGuaranteeData ,
+    newsLetterData,
 } from '../Static';
 
 
@@ -32,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
                 />
             </View>
 
-            <HimHer himHerData={himHerData} />
+            <HimHer himHerData={himHerData} navigation={navigation} />
 
             <View style={styles.diamondSlickContainer}>
                 <Text style={styles.diamondSlickHeading}>
@@ -55,6 +58,10 @@ const HomeScreen = ({ navigation }) => {
 
             <Ideal img={ourProcessData.img} title={ourProcessData.title} />
             <Ideal img={ourGuaranteeData.img} title={ourGuaranteeData.title} />
+
+            <NewsLetter newsLetterData={newsLetterData}/>
+
+            <Footer />
 
         </ScrollView>
     );
