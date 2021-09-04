@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     linkText:{
         fontSize: 10, 
         color: '#5a5a5a', 
-        fontWeight: 100 
+        fontWeight: '100' 
     },
     iconsContainer: {
         flex: 0.45,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     infoText:{
         fontSize: 11, 
         color: '#000000bd', 
-        fontWeight: 100, 
+        fontWeight: '100', 
         letterSpacing: 1.3
     }
 })

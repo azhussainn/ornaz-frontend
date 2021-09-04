@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     },
     iconLabel : {
         color: 'grey', 
-        fontWeight: 100, 
+        fontWeight: '100', 
         fontSize: 14, 
         lineHeight: 18 
     }

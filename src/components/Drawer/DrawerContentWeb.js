@@ -1,22 +1,24 @@
 import  React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { List } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 import Currency from '../Currency';
-import DrawerContentWeb from './DrawerContentWeb';
 
-export function DrawerContent({ navigation }){
-
-    if(Platform.OS === 'web'){
-        return <DrawerContentWeb />
-    }
+const DrawerContentWeb = () => {
 
     const [ currentCurrency, setCurrentCurrency ] = useState('INR')
+    const navigation = useNavigation();
 
     return(
-        <List.Section style={styles.listContainer}>
+        <View style={styles.listContainer}>
             <List.Accordion
-                title={<Text style={styles.text}>Engagement Ring</Text>}
-                style={[ styles.accordion, styles.border, { borderTopWidth: 1} ]}
+                title=
+                    {
+                        <Text style={styles.text}>
+                            Engagement Ring
+                        </Text>
+                    }
+                style={[ styles.accordion, styles.border, { borderTopWidth: 0} ]}
                 titleStyle={{
                     color: 'black'
                 }}
@@ -24,62 +26,47 @@ export function DrawerContent({ navigation }){
                 <View>
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ForHer')}
+                        style={styles.accordionChildContainer}
                     >
-                        <List.Item title=
-                            {
-                                <Text style={styles.text}>
-                                    For Her
-                                </Text>
-                            }
-                        />
+                        <Text style={styles.text}>
+                            For Her
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ForHim')}
+                        style={styles.accordionChildContainer}
                     >
-                        <List.Item title=
-                            {
-                                <Text style={styles.text}>
-                                    For Him
-                                </Text>
-                            }
-                        />
+                        <Text style={styles.text}>
+                            For Him
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Rings')}
+                        style={styles.accordionChildContainer}
                     >
-                        <List.Item title=
-                            {
-                                <Text style={styles.text}>
-                                    Rings
-                                </Text>
-                            }
-                        />
+                        <Text style={styles.text}>
+                            Rings
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Bands')}
+                        style={styles.accordionChildContainer}
                     >
-                        <List.Item title=
-                            {
-                                <Text style={styles.text}>
-                                    Bands
-                                </Text>
-                            }
-                        />
+                        <Text style={styles.text}>
+                            Bands
+                        </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate('ViewAll')}
+                        style={styles.accordionChildContainer}
                     >
-                        <List.Item title=
-                            {
-                                <Text style={styles.text}>
-                                    View All
-                                </Text>
-                            }
-                        />
+                        <Text style={styles.text}>
+                            View All
+                        </Text>
                     </TouchableOpacity>
                     <View 
                         style={[styles.accordionBorder, { marginTop: 0 }]}
@@ -89,34 +76,43 @@ export function DrawerContent({ navigation }){
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('DesignYourOwn')}
-                style={[ styles.border]}
+                style={[ styles.border, styles.accordion, { paddingLeft: 15 }]}
             >
-                <List.Item title={<Text style={styles.text}>Design your Own Engagement Ring</Text>} />
+                <Text style={styles.text}>
+                    Design your Own Engagement Ring
+                </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('ReferYourFriends')}
-                style={[ styles.border ]}
+                style={[ styles.border, styles.accordion, { paddingLeft: 15 } ]}
             >
-                <List.Item title={<Text style={styles.text}>Refer Your Friends</Text>} />
+                <Text style={styles.text}>
+                    Refer Your Friends
+                </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('BookAppointement')}
-                style={[ styles.border ]}
+                style={[ styles.border, styles.accordion, { paddingLeft: 15 } ]}
             >
-                <List.Item title={<Text style={styles.text}>Book An Appointment</Text>} />
+                <Text style={styles.text}>Book An Appointment</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('TryAtHome')}
-                style={[ styles.border ]}
+                style={[ styles.border, styles.accordion, { paddingLeft: 15 } ]}
             >
-                <List.Item title={<Text style={styles.text}>Try At Home For Free</Text>}/>
+                <Text style={styles.text}>Try At Home For Free</Text>
             </TouchableOpacity>
 
             <List.Accordion
-                title={<Text style={styles.text}>{currentCurrency}</Text>}
+                title=
+                    {
+                        <Text style={styles.text}>
+                            {currentCurrency}
+                        </Text>
+                    }
                 style={[ styles.accordion, styles.border ]}
                 titleStyle={{
                     color: 'black'
@@ -153,9 +149,11 @@ export function DrawerContent({ navigation }){
 
             <TouchableOpacity
                 onPress={() => navigation.navigate('ContactUs')}
-                style={[ styles.border ]}
+                style={[ styles.border, styles.accordion, { paddingLeft: 15 } ]}
             >
-                <List.Item title={<Text style={styles.text}>Contact Us</Text>} />
+                <Text style={styles.text}>
+                    Contact Us
+                </Text>
             </TouchableOpacity>
 
             <View
@@ -181,13 +179,13 @@ export function DrawerContent({ navigation }){
                 </TouchableOpacity>
             </View>
 
-        </List.Section>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     listContainer: {
-        marginTop: 39, 
+        marginTop: 16, 
         flex: 1,
     },
     border: {
@@ -197,17 +195,15 @@ const styles = StyleSheet.create({
     accordion: {
         backgroundColor:'white',
         height: 48,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     buttonContainer: {
-        position: 'absolute', 
-        bottom: 0,  
         flex: 1, 
         flexDirection: 'row', 
         justifyContent: 'center', 
-        alignItems: 'center',
+        alignItems: 'flex-end',
         zIndex: 3,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
     },
     button: {
         borderColor: '#c9c9c9', 
@@ -224,6 +220,12 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         marginTop: 15
     },
+    accordionChildContainer:{
+        height: 30,
+        justifyContent: 'center',
+        paddingLeft: 20,
+        marginVertical: 3
+    },
     text: {
         fontSize: 14
     },
@@ -231,3 +233,5 @@ const styles = StyleSheet.create({
         flex: 1
     }
 })
+
+export default DrawerContentWeb
