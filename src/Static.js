@@ -36,6 +36,16 @@ import vcTablet from '../assets/homepage/virtual_consultant/vc-tablet.jpg';
 import ourProcess from '../assets/homepage/our-process.jpg';
 import ourGuarantee from '../assets/homepage/our-guarantee.jpg';
 
+import AkarshakGera from '../assets/homepage/testamonials/Akarshak-Gera.jpg';
+import KiranLulla from '../assets/homepage/testamonials/Kiran-Lulla.jpg';
+import NishaSharma from '../assets/homepage/testamonials/Nisha-Sharma.jpg';
+import RaginiTrehan from '../assets/homepage/testamonials/Ragini-Trehan.jpg';
+import AyushiGupta from '../assets/homepage/testamonials/Ayushi-Gupta.jpg';
+import ParulGandhi from '../assets/homepage/testamonials/Parul-Gandhi.jpg';
+import PranavXeteParcar from '../assets/homepage/testamonials/Pranav-Xete-Parcar.jpg';
+
+import googleReviewIcon from '../assets/homepage/google-review-icon.png';
+
 import thirtyDayReturn from '../assets/homepage/branding/30dayreturn.png';
 import lifeTimeExchange from '../assets/homepage/branding/lifetimeexchange.png';
 import certified from '../assets/homepage/branding/certified.png';
@@ -138,6 +148,47 @@ export const vcData = [
 
 export const ourProcessData = { img: ourProcess, title: "OUR PROCESS" }
 export const ourGuaranteeData = { img: ourGuarantee, title: "GUARANTEES" }
+
+export const testamonialData = [
+    {
+        img: AkarshakGera,
+        title: 'My fiancé and I were looking for a ring for our upcoming wedding (well, my beautiful fiancé was the one really looking lol), and we got in touch with Harsh from Ornaz. Professionalism, empathy and great customer-understanding are three attributes that come to my Mind when I think of him. I personally had a fantastic experience while dealing with Harsh, and so did my Fiancé. For me, more than the product, it’s the customer experience that I judge a business on. And these guys had it ON POINT!! Thank you so much, Harsh!',
+        name: '- Akarshak Gera'
+    },
+    {
+        img: KiranLulla,
+        title: 'I had a wonderful experience purchasing my ring online from Ornaz. My customised ring was exactly made the way i wanted it to. Thanks to Harsh for making sure all the details were considered while making the ring. Loved the Service ,definitely Recommended!! Can’t wait to shop more:)',
+        name: '- Kiran Lulla'
+    },
+    {
+        img: NishaSharma,
+        title: 'I came to know about ornaz through Instagram, was very intrigued by the variety of rings they have on their page. On that very day, I decided to pick my engagement ring from there itself. So when the time came, I knew exactly where to go and chose this most beautiful ring, all thanks to Harsh, our ( diamond consultant), who helped us to choose the perfect diamond that suits my personality and choice.',
+        name: '- Nisha Sharma'
+    },
+    {
+        img: RaginiTrehan,
+        title: 'I bought an engagement kind of ring from Ornaz recently and I must say that it was a whole new experience in solitaire buying for me. Everything, be it  selecting a customized design, understanding solitaire types, purity, clarity,  or production, delivery, and payment, was seamlessly done by the Ornaz team. I got an extremely good price for my ring and it looks extremely beautiful. The excellent craftsmanship makes it look picture-perfect.  Ornaz has successfully elevated my ring buying experience and I highly recommend this one for purchasing any kind of diamond/solitaire rings.',
+        name: '- Ragini Trehan'
+    },
+    {
+        img: AyushiGupta,
+        title: 'I had wonderful experience purchasing my ring online from ORNAZ as I got a variety of designs to choose from and they had a wonderful customer care so I never had to wait much to receive response to any of my queries.A special thanks to Bhakti for always attending to my queries and doubts. Loved their products and services.',
+        name: '- Ayushi Gupta'
+    },
+    {
+        img: ParulGandhi,
+        title: 'Lovely service! They delivered at doorstep. Customer service is brilliant!',
+        name: '- Parul Gandhi'
+    },
+    {
+        img: PranavXeteParcar,
+        title: 'Amazing product. Safe and timely delivered. Wonderful customer service, special thanks to Shrishti for guiding me in finalizing the best ring. Cheers ORNAZ.',
+        name: '- Pranav Xete Parcar'
+    }
+]
+
+export const googleReview = googleReviewIcon
+
 
 export const newsLetterData = [
     {

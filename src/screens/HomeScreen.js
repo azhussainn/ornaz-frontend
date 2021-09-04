@@ -17,6 +17,8 @@ import {
     ourProcessData, 
     ourGuaranteeData ,
     newsLetterData,
+    testamonialData,
+    googleReview
 } from '../Static';
 
 const HomeScreen = ({ navigation }) => {
@@ -24,6 +26,7 @@ const HomeScreen = ({ navigation }) => {
     let SlickDiamond;
     if(isNotWeb){
         SlickDiamond = require('../components/Slick/SlickDiamond').default
+        SlickReviews = require('../components/Slick/SlickReviews').default
     }
 
     return (
@@ -64,6 +67,17 @@ const HomeScreen = ({ navigation }) => {
             <Ideal img={ourProcessData.img} title={ourProcessData.title} />
             <Ideal img={ourGuaranteeData.img} title={ourGuaranteeData.title} />
 
+            <View style={styles.reviewContainer}>
+                <View 
+                    style={{
+                        height: 60
+                    }}
+                />
+                {
+                    isNotWeb && <SlickReviews img_data={testamonialData} googleReviewImg={googleReview} />
+                }
+            </View>
+
             <NewsLetter newsLetterData={newsLetterData}/>
 
             <Footer />
@@ -100,6 +114,10 @@ const styles = StyleSheet.create({
     celebCarouselContainer: {
         height: 410
     },
+    reviewContainer: {
+        height: 550,
+        backgroundColor: 'white'
+    }
 })
 
 export default HomeScreen
