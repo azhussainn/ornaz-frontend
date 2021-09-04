@@ -48,7 +48,10 @@ const HomeScreen = ({ navigation }) => {
                     MEET OUR BEST SELLERS
                 </Text>
                 {
-                    isNotWeb && <SlickDiamond img_data={diamondData}/>
+                    isNotWeb ? <SlickDiamond img_data={diamondData}/>
+                    : <View
+                        style={{ flex: 1, backgroundColor: 'black' }}
+                    ></View>
                 }
             </View>
 

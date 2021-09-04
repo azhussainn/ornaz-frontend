@@ -6,16 +6,18 @@ import {
   View,
   Dimensions,
   ImageBackground,
-  Image
+  Image,
+  Platform
 } from 'react-native';
 import Carousel from 'react-native-anchor-carousel';
 import congrats from '../../../assets/homepage/couples/congrats.png';
 
 const {width: windowWidth} = Dimensions.get('window');
-
-
 const INITIAL_INDEX = 0;
+
 export default function CouplesCarousel({ img_data }) {
+
+  const isWeb = Platform.OS === 'web'
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(INITIAL_INDEX);
 
@@ -44,7 +46,10 @@ export default function CouplesCarousel({ img_data }) {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={
+        isWeb ? [styles.container, { flex: 1 }]
+        : styles.container
+    }>
       <Carousel
         style={styles.carousel}
         data={img_data}
