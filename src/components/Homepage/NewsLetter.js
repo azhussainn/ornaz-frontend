@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import { View, Image, StyleSheet, TextInput, Text, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, TextInput, Text, TouchableOpacity, Platform } from 'react-native';
 
 
 const NewsLetter = ({ newsLetterData }) => {
 
+    const isNotWeb = Platform.OS !== 'web'
     const [ text, setText ] = useState('')
-    const iconsContainer = []
 
     const handleSubmit = () => {
         console.log("ButtonPressed")
     }
 
+    const iconsContainer = []
     for(let i=0; i < newsLetterData.length; i+=2) {
         iconsContainer.push(
             <View style={styles.iconsParent} key={i} >
@@ -59,22 +60,36 @@ const NewsLetter = ({ newsLetterData }) => {
 
 
     return (
-        <View style={styles.newsLetterContainer}>
-                <View>
-                    <View style={{flex: 1}}>
+        <View style={
+                isNotWeb ? [styles.newsLetterContainer, { height: 300, }]
+                : styles.newsLetterContainer
+            }
+        >
+                <View
+                    style={{ flex: 1 }}
+                >
+                    <View style={{flex: 1,}}>
                         <Text style={styles.heading}>
                             For Everything on
                         </Text>
-                        <Text style={[ styles.heading, {marginTop: 5}]}>
+                        <Text style={
+                            isNotWeb ? [ styles.heading, {marginTop: -5}]
+                                 :[ styles.heading, {marginTop: 5}]
+                            }
+                        >
                             Engagement Ring & Jewellery
                         </Text>
                     </View>
 
-                    <View
-                        style={styles.textInputContainer}
+                    <View style={
+                            isNotWeb ? [styles.textInputContainer, { marginTop: 35 }]
+                            : styles.textInputContainer
+                        }
                     >
                         <TextInput 
-                            style={styles.textInput}
+                            style={
+                                isNotWeb ? [styles.textInput, { padding: 0 }]
+                                : styles.textInput}
                              placeholder='Signup for Newsletter'
                              value={text}
                              onChangeText={setText}
@@ -139,7 +154,7 @@ const styles = StyleSheet.create({
         marginTop: 25,
         backgroundColor: '#f5f5f5',
         padding: 10,
-        paddingTop: 30
+        paddingTop: 30,
     },
     iconsParent:{
         flex: 1,
