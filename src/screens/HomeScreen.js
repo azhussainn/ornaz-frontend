@@ -58,6 +58,14 @@ const HomeScreen = ({ navigation }) => {
                     <CelebCarousel img_data={celebData}/>
                 </View>
             </View>
+            <View
+                style={{
+                    height: 25,
+                    backgroundColor: 'white'
+                }}
+            >
+
+            </View>
 
             <VirtualConsultant img_data={vcData} />
 

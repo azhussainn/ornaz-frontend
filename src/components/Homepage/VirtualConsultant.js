@@ -25,7 +25,9 @@ const VirtualConsultant = ({ img_data }) => {
                         style={styles.vcTextContainer}
                     >
                         <Text
-                            style={styles.vcTextUp}
+                            style={
+                                    i == 0 ? [styles.vcText, { marginTop: -50 }] 
+                                    : styles.vcText}
                         >
                             { obj.text}
                         </Text>
@@ -42,7 +44,9 @@ const VirtualConsultant = ({ img_data }) => {
                         style={styles.vcTextContainer}
                     >
                         <Text
-                            style={styles.vcTextUp}
+                            style={
+                                i == 1 ? [styles.vcText, { marginBottom: 25 }]
+                                : styles.vcText}
                         >
                             { obj.text}
                         </Text>
@@ -89,12 +93,13 @@ const styles = StyleSheet.create({
     },
     vcTextContainer: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
     },
-    vcTextUp: {
+    vcText: {
         fontSize: 15,
-        marginTop: -25 
+        textAlign: 'center'
     },
     image: {
         alignSelf: 'center',
