@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Text, View, Image, ScrollView, StyleSheet } from 'react-native';
+import React from 'react';
+import { Text, View, Image, ScrollView, StyleSheet, Platform } from 'react-native';
 import mobileBanner from '../../assets/homepage/mobile-banner-new.jpg';
 import HimHer from '../components/Homepage/HimHer';
-// import SlickDiamond from '../components/Slick/SlickDiamond';
 import CouplesCarousel from '../components/Carousel/CouplesCarousel';
 import CelebCarousel from '../components/Carousel/CelebCarousel';
 import VirtualConsultant from '../components/Homepage/VirtualConsultant';
@@ -20,8 +19,12 @@ import {
     newsLetterData,
 } from '../Static';
 
-
 const HomeScreen = ({ navigation }) => {
+    let isNotWeb = Platform.OS !== 'web'
+    let SlickDiamond;
+    if(isNotWeb){
+        SlickDiamond = require('../components/Slick/SlickDiamond').default
+    }
 
     return (
         <ScrollView style={{ flex: 1 }}
@@ -41,7 +44,9 @@ const HomeScreen = ({ navigation }) => {
                 <Text style={styles.diamondSlickHeading}>
                     MEET OUR BEST SELLERS
                 </Text>
-                {/* <SlickDiamond img_data={diamondData}/> */}
+                {
+                    isNotWeb && <SlickDiamond img_data={diamondData}/>
+                }
             </View>
 
             <View style={styles.CouplesCarouselContainer}>

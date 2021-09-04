@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import Slick from 'react-native-slick'; 
 import { Entypo } from '@expo/vector-icons'; 
+// import Slick from 'react-native-slick'; 
+const Slick = require('react-native-slick').default 
 
 
 const SlickDiamond = ( { img_data } ) => {
