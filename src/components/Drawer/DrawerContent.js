@@ -16,7 +16,7 @@ export function DrawerContent({ navigation }){
         <List.Section style={styles.listContainer}>
             <List.Accordion
                 title={<Text style={styles.text}>Engagement Ring</Text>}
-                style={[ styles.accordion, styles.border, { borderTopWidth: 1} ]}
+                style={[ styles.accordion, styles.border, { borderTopWidth: 0} ]}
                 titleStyle={{
                     color: 'black'
                 }}
@@ -187,7 +187,7 @@ export function DrawerContent({ navigation }){
 
 const styles = StyleSheet.create({
     listContainer: {
-        marginTop: 39, 
+        marginTop: 47, 
         flex: 1,
     },
     border: {

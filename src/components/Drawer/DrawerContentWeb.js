@@ -215,10 +215,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     accordionBorder: {
-        flex: 1,
         borderColor: '#e6e6e6',
         borderBottomWidth: 1,
-        marginTop: 15
     },
     accordionChildContainer:{
         height: 30,

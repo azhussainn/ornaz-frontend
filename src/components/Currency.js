@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, View, StyleSheet,TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet,TouchableOpacity, Platform } from 'react-native';
 
 
 function Currency( { currencyArr, navigation, currentCurrency} ) {
 
+    const isWeb = Platform.OS === 'web'
     if(!currencyArr){
         return <Text>Currency Not Available</Text>;
     }
@@ -11,7 +12,12 @@ function Currency( { currencyArr, navigation, currentCurrency} ) {
     const currencyObj = currencyArr.map( currency => {
         return (
             <TouchableOpacity
-                style={styles.currency}
+                style={
+                        isWeb ? [
+                            styles.currencyWeb, styles.center
+                        ]
+                        : styles.currency 
+                    }
                 key={currency}
                 onPress={() => navigation.navigate('Home')}
             >
@@ -31,7 +37,12 @@ function Currency( { currencyArr, navigation, currentCurrency} ) {
 
 
     return (
-        <View style={styles.currencyContainer}>
+        <View style={
+                isWeb ?
+                [styles.currencyContainer, {  margin: 20, marginVertical: 6 }]
+                : styles.currencyContainer
+            }
+        >
             {currencyObj}
         </View>
     );
@@ -47,7 +58,11 @@ const styles = StyleSheet.create({
     },
     currency: {
         width: 40,
-        height: 40
+        height: 40,
+    },
+    currencyWeb:{
+        width: 30,
+        height: 30, 
     },
     text: {
         fontSize: 11
@@ -57,6 +72,10 @@ const styles = StyleSheet.create({
     },
     highlightText:{
         color: '#45d4d5',
+    },
+    center: {
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })
 
