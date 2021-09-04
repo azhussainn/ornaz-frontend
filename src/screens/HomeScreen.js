@@ -30,8 +30,8 @@ const HomeScreen = ({ navigation }) => {
     }
 
     return (
-        <ScrollView style={{ flex: 1 }}
-        showsVerticalScrollIndicator={false}
+        <ScrollView style={styles.mainContainer}
+            showsVerticalScrollIndicator={false}
         >
             <View style={styles.firstImgContainer}>
                 <Image
@@ -61,18 +61,14 @@ const HomeScreen = ({ navigation }) => {
                     <CelebCarousel img_data={celebData}/>
                 </View>
             </View>
-            <View style={{height: 25, backgroundColor: 'white'}} />
+            <View style={styles.vcContainerMargin} />
             <VirtualConsultant img_data={vcData} />
 
             <Ideal img={ourProcessData.img} title={ourProcessData.title} />
             <Ideal img={ourGuaranteeData.img} title={ourGuaranteeData.title} />
 
             <View style={styles.reviewContainer}>
-                <View 
-                    style={{
-                        height: 60
-                    }}
-                />
+                <View style={styles.reviewContainerMargin}/>
                 {
                     isNotWeb && <SlickReviews img_data={testamonialData} googleReviewImg={googleReview} />
                 }
@@ -87,6 +83,9 @@ const HomeScreen = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    mainContainer:{
+        flex: 1 
+    },
     firstImgContainer: {
         height: 380 
     },
@@ -111,12 +110,19 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor:'white'
     },
+    vcContainerMargin:{
+        height: 25, 
+        backgroundColor: 'white'
+    },
     celebCarouselContainer: {
         height: 410
     },
     reviewContainer: {
         height: 550,
         backgroundColor: 'white'
+    },
+    reviewContainerMargin:{
+        height: 60
     }
 })
 
